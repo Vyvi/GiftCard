@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.cart.totals">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="block-totals" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="custom_discount" xsi:type="array">
+                                    <item name="component"  xsi:type="string">Mageplaza_GiftCard/js/view/checkout/summary/customdiscount</item>
+                                    <item name="sortOrder" xsi:type="string">40</item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="content">
+            <block class="Magento\Checkout\Block\Cart\Coupon" name="my_disable_content" template="Mageplaza_GiftCard::disablecontent.phtml" cacheable="false">
+            </block>
+        </referenceBlock>
+    </body>
+</page>

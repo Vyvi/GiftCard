@@ -1,0 +1,29 @@
+<div id="history" style="margin-top:100px">
+    <legend class="legend"><span><?= "History" ?></span></legend>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th><?= "Date" ?></th>
+            <th><?= "Code" ?></th>
+            <th><?= "Amount" ?></th>
+            <th><?= "Action" ?></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <?php
+        $data = $block->getHistory();
+        foreach ($data as $item) : ?>
+            <tr>
+                <!--          $block->formatDate($item['action_time'])      -->
+                <td><?= $block->formatDate($item['action_time']) ?></td>
+                <td><?= $block->getCode($item['giftcard_id']) ?></td>
+                <td><?= $this->helper('Magento\Framework\Pricing\Helper\Data')->currency($item['amount'], true, false); ?></td>
+                <td><?= $item['action'] ?></td>
+            </tr>
+        <?php
+        endforeach;
+        ?>
+        </tbody>
+    </table>
+</div>

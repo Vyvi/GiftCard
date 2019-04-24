@@ -1,0 +1,11 @@
+<script>
+    require(['jquery'], function($){
+        $(document).ready(function(){
+            var status = $('#coupon_code').val();
+            if (status != ''){
+                $('#coupon_code').attr('readonly','readonly');
+
+            }
+        });
+    });
+</script>

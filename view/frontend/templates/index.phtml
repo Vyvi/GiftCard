@@ -1,0 +1,52 @@
+<style>
+    .enable{
+        display: block!important;
+    }
+    .disable{
+        display: none;
+    }
+    .null{
+        border: 1px solid #e02b27 !important;
+    }
+</style>
+<script>
+    require(['jquery',
+        'underscore'
+    ], function($,underscore){
+        $(document).ready(function(){
+
+            $("#btn-giftcode").click(function(even){
+                var value = $("#redeem").val();
+                var number = $("#amount_redeem").val();
+                if (value == " " ){
+                    $('#notif').addClass('enable');
+                    $('#redeem').addClass('null');
+                    even.preventDefault()
+                }
+            });
+        });
+    });
+</script>
+<div id="info">
+    <legend class="legend"><span>"Gift Card Infomation"</span></legend>
+    <div style="width: 50%; float: left">
+        <b>Balance</b>
+        <p><?=$this->helper('Magento\Framework\Pricing\Helper\Data')->currency($block->getBalance(), true, false);  ?></p>
+    </div>
+
+    <?php
+    if ($block->isRedeemAllowed()) :
+//        ?>
+        <div style="width: 50%; float: left;">
+            <form action="<?php echo $block->getUrl('giftcard/index/redeem') ?>" method="POST">
+                <b>Redeem</b><br>
+                <input style="width: 50%" type="text" name="redeem" id="redeem"
+                       placeholder="Enter gift card code"/>
+                <input style="width: 50%" type="text" name="amount_redeem" id="amount_redeem"
+                       placeholder="Enter gift card amount redeem"/>
+                <button id="btn-giftcode" type="submit" class="action save primary">Redeem</button>
+            </form>
+            <div id="notif" class="disable"><p style="display: inline-block;width: 100%;color: #e02b27;font-size: 1.2rem;padding: 5px 0">This is a required field.</p></div>
+        </div>
+    <?php endif; ?>
+</div>
