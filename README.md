@@ -6,11 +6,11 @@ Highlight features
 Installation guide
 User Guide
 ✓ Install via composer (recommend)
-Run the following command in Magento 2 root folder:
+Run the following command in Magento 2 root folder:<br>
 
-composer require Vyvy/GiftCard
-php bin/magento setup:upgrade
-php bin/magento setup:static-content:deploy
+composer require Vyvy/GiftCard<br>
+php bin/magento setup:upgrade<br>
+php bin/magento setup:static-content:deploy<br>
 
 ✓ Install ready-to-paste package
 
