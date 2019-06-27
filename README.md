@@ -5,7 +5,7 @@ Magento 2 Extension
 Highlight features
 Installation guide
 User Guide
-✓ Install via composer (recommend)
+✓ Install via composer (recommend)<br>
 Run the following command in Magento 2 root folder:<br>
 
 composer require Vyvy/GiftCard<br>
